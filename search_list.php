@@ -13,6 +13,10 @@
 		$iTotalPage = $_SESSION['iTotalPage'];		//全ページ数
 		$iTotalCount = $_SESSION['iTotalCount'];	//全データ件数
 		$arrayData = $_SESSION['arrayData'];		//案件情報一覧データ
+
+		$value_skill = $_SESSION['value_skill'];	//検索項目(スキル)
+		$value_price = $_SESSION['value_price'];	//検索項目(金額)
+		$value_free_word = $_SESSION['value_free_word'];	//検索項目(フリーワード)
 	} else {
 		//pageが設定されていない場合は、DBアクセスあり
 		$sDbAccess = 'YES';
@@ -53,12 +57,15 @@
 	// 検索項目を取得
 	if( isset($_POST['search_skill']) ){
 		$search_skill = $_POST['search_skill'];
-	}
+		$_SESSION['value_skill'] = $_POST['search_skill'];
+	} 
 	if( isset($_POST['search_price']) ){
 		$search_price = $_POST['search_price'];
+		$_SESSION['value_price'] = $_POST['search_price'];
 	}
 	if( isset($_POST['search_free_word']) ){
 		$search_detail = $_POST['search_free_word'];
+		$_SESSION['value_free_word'] = $_POST['search_free_word'];
 	}
 
 	if($sDbAccess=='YES'){
@@ -79,7 +86,6 @@
 		//初画面の場合は１ページに設定
 		header('Location:?page=1');
 	}
-
 	//ページ先頭データ添字 = (現在のページ - 1) * 一覧表示件数
 	$iFirstSubscript = ($page - 1) * DISPLAY_COUNT;
 ?>
@@ -87,7 +93,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-		<title>フリーズエンジニア</title>
+		<title>フリーえんじにゃ～</title>
 		<link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -106,19 +112,19 @@
 		<button class="_button _button-4">ご利用の流れ</button>
 		<button class="_button _button-5">会員登録</button>
 		<div class="element element-1"></div>-->
-		●案件検索・案件情報一覧画面●
+		<b>●案件検索・案件情報一覧画面●</b>
 		<br />
         <br />
         <div>
             <form method="post" action="search_list.php">
 			    スキル<br />
-    			<input type="text" name="search_skill" style="width:200px"><br />
+    			<input type="text" name="search_skill" style="width:200px" value="<?php echo $value_skill ?>"><br />
 	    		<br />
 		    	金額<br />
-			    <input type="text" name="search_price" style="width:200px"><br />
+			    <input type="text" name="search_price" style="width:200px" value="<?php echo $value_price ?>"><br />
     			<br />
 	    		フリーワード<br />
-		    	<input type="text" name="search_free_word" style="width:200px"><br />
+		    	<input type="text" name="search_free_word" style="width:200px" value="<?php echo $value_free_word ?>"><br />
 			    <br />
                 <input type="submit" value="検索">
                 <input type="button" onclick="history.back()" value="戻る">
@@ -138,20 +144,24 @@
 							break;
 						}
 					    print'<table border=1 style="table-layout:fixed; float:left; margin:5px;width: 27%;">';
-						    print'<tr>';
-								print'<td colspan="5" style="height:30px;">案件番号：'. $arrayData[$i]['project_id'] .'</td>';
+							print'<tr>';
+								print'<td colspan="5" class="search_pj_header">案件番号</td>';
+								print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_id'] .'</td>';
 							print'</tr>';
 							print'<tr>';
-    							print'<td colspan="5" style="height:30px; white-space: nowrap; overflow:hidden;">'. $arrayData[$i]['project_subject'] .'</td>';
+								print'<td colspan="5" class="search_pj_header">案件名</td>';
+    							print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_subject'] .'</td>';
 	    					print'</tr>';
-		    				print'<tr>';
-			    				print'<td colspan="5" style="height:30px;">'. $arrayData[$i]['project_price'] .'円</td>';
+							print'<tr>';
+								print'<td colspan="5" class="search_pj_header">金額</td>';
+			    				print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_price'] .'円</td>';
 				   			print'</tr>';
-				    		print'<tr>';
-					    		print'<td colspan="5" style="height:30px; white-space: nowrap; overflow:hidden;">'. $arrayData[$i]['project_skill'] .'</td>';
+							print'<tr>';
+								print'<td colspan="5" class="search_pj_header">スキル</td>';
+					    		print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_skill'] .'</td>';
 						    print'</tr>';
     						print'<tr>';
-	    						print '<td colspan="5" style="height:30px;"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'">詳細みたい！</a></td>';
+	    						print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'">詳細みたい！</a></td>';
 		    				print'</tr>';
 			    		print'</table>';
 				   	}
