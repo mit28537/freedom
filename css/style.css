@@ -1,0 +1,147 @@
+/* �������@���ʂ̐ݒ�@������ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body 		{font-family: Lato, "Noto Sans JP", "��S�V�b�N Medium", "��S�V�b�N��", "Yu Gothic Medium", YuGothic, "�q���M�m�p�S ProN", "Hiragino Kaku Gothic ProN", "���C���I", Meiryo, "�l�r �o�S�V�b�N", "MS PGothic", sans-serif;
+}
+
+/* �T�C�g���̐ݒ� */
+.site_name  {height: 80px}
+
+/* �g�b�v���j���[�̐ݒ� */
+.top_menu   {
+            height: 60px;
+            text-align: center;
+            background-color: #FFFFCC}
+
+.top_menu ul {list-style-type: none;
+              padding-top: 10px}
+
+.top_menu li {display: inline;
+              font-size: 20px;
+              padding: 30px}
+
+/* �g�b�v�摜�̐ݒ� */
+.top_img    {width: 100%;
+            height: 100%}
+
+.box_list   {
+            font-size: 15px}
+
+.box_new    {
+            height: 50%;
+            background-color: #FFCC66}
+
+.box_pickup {
+            height: 50%;
+            background-color: #DEB887}
+
+/* �������@���ʂ̐ݒ�@������ */
+
+/* �������@����768px�ȉ��̐ݒ�@������ */
+@media(max-width: 768px) {
+
+.site_name  {
+            height: 50px}
+
+.site_name_img    {width: 90%;
+            height: 90%}
+
+.top_menu ul {
+              padding-top: 10px;
+              padding-left: 0;
+              padding-right: 0}
+
+.top_menu li {
+              font-size: 15px;
+              padding: 5px}
+
+.box_list       {font-size: 10px}
+
+.box_main   {
+            height: 1000px;
+            width: 100%;
+            background-color: #FFFFCC}
+
+.box_side       {float: left;
+            width: 100%;
+            background-color: #FFFFCC}
+
+.box_search      {float: left;
+            width: 100%;
+            height: 220px;
+            font-size: 10px;
+            padding: 10px;
+            background-color: #FF6600}
+
+.box_copyright      {float: left;
+            width: 100%;
+            height: 50px;
+            background-color: #FFFFCC}
+
+}
+.new_pj_header {
+            height: 30px;
+            width: 80px;
+            text-align: center;
+            background-color: #CCFFFF}
+
+.new_pj_content {
+            height: 30px;
+            white-space: nowrap;
+            overflow:hidden;}
+.pickup_pj_header {
+            height: 30px;
+            width: 80px;
+            background-color: #CCFFCC;
+            text-align:center}
+    
+/* �������@����768px�ȉ��̐ݒ�@������ */
+
+/* �������@����768px�ȏ�̐ݒ�@������ */
+@media(min-width: 768px) {
+
+.box_main   {float: left;
+            height: 1500px;
+            width: 65%;
+            background-color: #FFFFCC}
+
+.box_side   {float: left;
+            width: 35%;
+            height: auto;
+            background-color: #FFFFCC}
+
+.sna_img    {width: 100%;
+            height: 100%}
+
+.box_search {float: left;
+            width: 100%;
+            height: 400px;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #FF6600}
+
+.box_copyright  {float: left;
+            width: 100%;
+            height: 100px;
+            background-color: #FFFFCC}
+
+}
+.page_counter{
+    float: left;
+    font-size: 20px;
+    width: 100%;
+}
+
+.footer{
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    height: 42px;
+    background-color: #00306f;
+}
+
+/* �������@����768px�ȏ�̐ݒ�@������ */
+

@@ -1,0 +1,207 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  position: relative;
+  float: left;
+  z-index: 0;
+  width: 19.6%;
+  height: 230px;
+  margin: -391px 0 0 16%;
+}
+
+.element {
+  float: left;
+}
+
+.image {
+  display: block;
+  position: relative;
+  float: left;
+  height: auto;
+  overflow: hidden;
+}
+
+._button {
+  display: block;
+  position: relative;
+  float: left;
+  border-radius: 3px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.element-1 {
+  position: relative;
+  clear: both;
+  z-index: 8;
+  width: 100%;
+  height: 367px;
+  margin-top: -337px;
+  background-color: #FFFFFF;
+}
+
+.element-2 {
+  position: relative;
+  z-index: 9;
+  width: 46%;
+  height: 42px;
+  margin: 39px 0 0 10%;
+  background-color: #00306f;
+}
+
+.element-3 {
+  position: relative;
+  z-index: 17;
+  height: 1px;
+  margin: 8px 0 0 10%;
+  background-color: #FFFFFF;
+}
+
+.element-4 {
+  position: relative;
+  z-index: 18;
+  width: 46%;
+  height: 410px;
+  margin-top: 8px;
+  background-color: #FFFFFF;
+}
+
+.element-5 {
+  position: relative;
+  clear: both;
+  z-index: 11;
+  width: 46%;
+  height: 42px;
+  margin: 12px 0 0 10%;
+  background-color: #00306f;
+}
+
+.element-6 {
+  width: 46%;
+  height: 410px;
+  margin: 10px 0 0 10%;
+  background-color: rgb#FFFFFF;
+}
+
+.element-7 {
+  position: relative;
+  clear: both;
+  z-index: 14;
+  width: 46%;
+  height: 42px;
+  margin: 11px 0 0 10%;
+  background-color: #00306f;
+}
+
+.element-8 {
+  width: 46%;
+  height: 285px;
+  margin: 6px 0 0 10%;
+  background-color: rgb;#FFFFFF
+}
+
+.element-9 {
+  clear: both;
+  width: 117.4166666666%;
+  height: 42px;
+  margin: 8px 0 0 -1.58073%;
+  background-color: #00306f;
+}
+
+.image-1 {
+  z-index: 7;
+  width: 9921px;
+  margin: -4303px 0 0 -748.75%;
+}
+
+.image-2 {
+  clear: both;
+  z-index: 1;
+  width: 780px;
+  margin: -453px 0 0 10%;
+}
+
+.image-3 {
+  z-index: 13;
+  width: 358px;
+  margin: -42px 0 0 2.5625%;
+}
+
+._button-1 {
+  z-index: 2;
+  width: 8.4%;
+  height: 29px;
+  margin: -411px 0 0 43.28776%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+._button-2 {
+  z-index: 3;
+  width: 8.3997395833%;
+  height: 29px;
+  margin: -411px 0 0 51.6875%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+._button-3 {
+  z-index: 4;
+  width: 8.3997395833%;
+  height: 29px;
+  margin: -411px 0 0 60.11198%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+._button-4 {
+  z-index: 5;
+  width: 8.3997395833%;
+  height: 29px;
+  margin: -411px 0 0 68.52734%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+._button-5 {
+  z-index: 6;
+  width: 8.3997395833%;
+  height: 29px;
+  margin: -411px 0 0 76.39974%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+._button-6 {
+  clear: both;
+  z-index: 10;
+  width: 10.4166666666%;
+  height: 26px;
+  margin: -33px 0 0 10.83073%;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+}
+
+._button-7 {
+  clear: both;
+  z-index: 12;
+  width: 10.4166666666%;
+  height: 26px;
+  margin: -33px 0 0 10.83073%;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+}
+
+._button-8 {
+  clear: both;
+  z-index: 15;
+  width: 10.4166666666%;
+  height: 26px;
+  margin: -34px 0 0 10.83073%;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+}
