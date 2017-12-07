@@ -65,23 +65,23 @@
                             <?php
                                 print'<table border=1 style="table-layout:fixed; float:left; padding:5px; margin:10px; width: 45%; background-color: #FFFFFF">';
                                     print'<tr>';
-                                        print'<td colspan="5" class="new_pj_header">案件番号</td>';
+                                        print'<td colspan="5" class="pj_header">案件番号</td>';
                                         print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_id'] .'</td>';
                                     print'</tr>';
                                     print'<tr>';
-                                        print'<td colspan="5" class="new_pj_header">案件名</td>';
+                                        print'<td colspan="5" class="pj_header">案件名</td>';
                                         print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_subject'] .'</td>';
                                     print'</tr>';
                                     print'<tr>';
-                                        print'<td colspan="5" class="new_pj_header">金額</td>';
+                                        print'<td colspan="5" class="pj_header">金額</td>';
                                         print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_price'] .'円</td>';
                                     print'</tr>';
                                     print'<tr>';
-                                        print'<td colspan="5" class="new_pj_header">スキル</td>';
+                                        print'<td colspan="5" class="pj_header">スキル</td>';
                                         print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_skill'] .'</td>';
                                     print'</tr>';
                                     print'<tr>';
-                                        print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'">詳細みたい！</a></td>';
+                                        print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
                                     print'</tr>';
                             print'</table>';
                             ?>
@@ -109,23 +109,23 @@
                                     <?php
                                         print'<table border=1 style="table-layout:fixed; float:left;padding:5px; margin:10px; width: 45%; background-color: #FFFFFF">';
                                             print'<tr>';
-                                                print'<td colspan="5" class="pickup_pj_header">案件番号</td>';
+                                                print'<td colspan="5" class="pj_header">案件番号</td>';
                                                 print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_id'] .'</td>';
                                             print'</tr>';
                                             print'<tr>';
-                                                print'<td colspan="5" class="pickup_pj_header">案件名</td>';
+                                                print'<td colspan="5" class="pj_header">案件名</td>';
                                                 print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_subject'] .'</td>';
                                             print'</tr>';
                                             print'<tr>';
-                                                print'<td colspan="5" class="pickup_pj_header">金額</td>';
+                                                print'<td colspan="5" class="pj_header">金額</td>';
                                                 print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_price'] .'円</td>';
                                             print'</tr>';
                                             print'<tr>';
-                                                print'<td colspan="5" class="pickup_pj_header">スキル</td>';
+                                                print'<td colspan="5" class="pj_header">スキル</td>';
                                                 print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_skill'] .'</td>';
                                             print'</tr>';
                                             print'<tr>';
-                                                print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$p_arrayData[$i]['project_id'].'">詳細みたい！</a></td>';
+                                                print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$p_arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
                                             print'</tr>';
                                         print'</table>';
                                     ?>

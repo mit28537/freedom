@@ -34,12 +34,12 @@ body 		{font-family: Lato, "Noto Sans JP", "��S�V�b�N Medium", "��
 
 .box_new    {
             width: 880px;
-            height: 700px;
+            height: 750px;
             background-color: #FFCC66}
 
 .box_pickup {
             width: 880px;
-            height: 700px;
+            height: 750px;
             background-color: #DEB887}
 
 /* �������@���ʂ̐ݒ�@������ */
@@ -87,22 +87,12 @@ body 		{font-family: Lato, "Noto Sans JP", "��S�V�b�N Medium", "��
             background-color: #FFFFCC}
 
 }
-.new_pj_header {
+.pj_header {
             height: 30px;
             width: 80px;
             text-align: center;
-            background-color: #CCFFFF}
-
-.pickup_pj_header {
-            height: 30px;
-            width: 80px;
-            background-color: #CCFFCC;
-            text-align:center}
-.search_pj_header {
-            height: 30px;
-            width: 80px;
-            background-color: #FFE4E1;
-            text-align:center}
+            background: #668ad8;
+            color: #FFF;}
 .pj_content {
             height: 30px;
             white-space: nowrap;
@@ -158,3 +148,17 @@ body 		{font-family: Lato, "Noto Sans JP", "��S�V�b�N Medium", "��
 
 /* �������@����768px�ȏ�̐ݒ�@������ */
 
+.design_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;}
+.design_btn:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;}
