@@ -23,7 +23,7 @@
 <html>
     <head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">
 		<title>フリーえんじにゃ～</title>
     </head>
     <body>
@@ -44,8 +44,28 @@
 		<div class="top">
 			<img src="img/top.png" class="top_img">
 		</div>
-		<!-- トップ画像END　-->
-
+        <!-- トップ画像END　-->
+        <!-- 検索　-->
+        <div class="box_search">
+            <form method="post" action="search_list.php">
+                <table border="0">
+                    <tr>
+                        <td style="width:100px"><b>スキル：</b></td>
+                        <td style="width:100px"><input type="text" name="search_skill" style="width:200px"><br /></td>
+                        <td style="width:100px;text-align:center;"><b>金額：</b></td>
+                        <td style="width:100px"><input type="text" name="search_price" style="width:200px"><br /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:150px"><b>フリーワード：</b></td>
+                        <td style="width:200px" colspan="3"><input type="text" name="search_free_word" style="width:400px"><br /></td>
+                    </tr>
+                    <tr >
+                        <td  style="width:100px;height:60px;vertical-align:middle" colspan="4"><input class="pj_search_btn" type="submit" value="案件検索"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!-- 検索END　-->
         <!-- 中央位置　-->
         <div class="box_middle">
             <div class="box_main">
@@ -63,14 +83,14 @@
                         ?>
                             <div class="box_list">
                             <?php
-                                print'<table border=1 style="table-layout:fixed; float:left; padding:5px; margin:10px; width: 45%; background-color: #FFFFFF">';
+                                print'<table border=1 class=""style="table-layout:fixed; float:left; padding:5px; margin:10px; width: 45%; background-color: #FFFFFF">';
                                     print'<tr>';
-                                        print'<td colspan="5" class="pj_header">案件番号</td>';
-                                        print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_id'] .'</td>';
-                                    print'</tr>';
-                                    print'<tr>';
-                                        print'<td colspan="5" class="pj_header">案件名</td>';
-                                        print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_subject'] .'</td>';
+                                        print'<td colspan="5" class="pj_cate_image" >';
+                                        print'<img src="'.$arrayData[$i]['mst_img_path'].'" class="cate_img"></td>';
+                                        print'<td colspan="5" class="pj_content">';
+                                        print'    <b>【'.$arrayData[$i]['mst_name'].'】</b><br>';
+                                        print     $arrayData[$i]['project_subject'] ;
+                                        print'</td>';
                                     print'</tr>';
                                     print'<tr>';
                                         print'<td colspan="5" class="pj_header">金額</td>';
@@ -81,7 +101,7 @@
                                         print'<td colspan="5" class="pj_content">'. $arrayData[$i]['project_skill'] .'</td>';
                                     print'</tr>';
                                     print'<tr>';
-                                        print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
+                                        print '<td colspan="10" class="box_detail_btn"><a href="search_details.php?project_id= '.$arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
                                     print'</tr>';
                             print'</table>';
                             ?>
@@ -109,12 +129,12 @@
                                     <?php
                                         print'<table border=1 style="table-layout:fixed; float:left;padding:5px; margin:10px; width: 45%; background-color: #FFFFFF">';
                                             print'<tr>';
-                                                print'<td colspan="5" class="pj_header">案件番号</td>';
-                                                print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_id'] .'</td>';
-                                            print'</tr>';
-                                            print'<tr>';
-                                                print'<td colspan="5" class="pj_header">案件名</td>';
-                                                print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_subject'] .'</td>';
+                                                print'<td colspan="5" class="pj_cate_image" >';
+                                                print'<img src="'.$arrayData[$i]['mst_img_path'].'" class="cate_img"></td>';
+                                                print'<td colspan="5" class="pj_content">';
+                                                print'    <b>【'.$arrayData[$i]['mst_name'].'】</b><br>';
+                                                print     $arrayData[$i]['project_subject'] ;
+                                                print'</td>';
                                             print'</tr>';
                                             print'<tr>';
                                                 print'<td colspan="5" class="pj_header">金額</td>';
@@ -125,7 +145,7 @@
                                                 print'<td colspan="5" class="pj_content">'. $p_arrayData[$i]['project_skill'] .'</td>';
                                             print'</tr>';
                                             print'<tr>';
-                                                print '<td colspan="10" style="height:30px;text-align:center;"><a href="search_details.php?project_id= '.$p_arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
+                                                print '<td colspan="10" class="box_detail_btn"><a href="search_details.php?project_id= '.$p_arrayData[$i]['project_id'].'" class="design_btn">詳細みたい！</a></td>';
                                             print'</tr>';
                                         print'</table>';
                                     ?>
@@ -140,7 +160,20 @@
 
             <!--　SNS　-->
             <div class="box_side">
-                <img src="img/sna_men.jpg" class="sna_img">
+                <table>
+                    <tr>
+                        <td><img src="img/sna_men.jpg" class="sna_img"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"><img src="img/member_regist.png" class="url_side_img"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"><img src="img/available_flow.png" class="url_side_img"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"><img src="img/user_voice.png" class="url_side_img"/></td>
+                    </tr>
+                </table>   
             </div>
             <!--　SNS-END　-->
         </div>
@@ -148,30 +181,6 @@
 
         <br />
         <br />
-
-        <!-- 検索　-->
-	    <div class="box_search">
-		    <p><b>■案件検索■</b></p>
-		    <form method="post" action="search_list.php">
-			    スキル
-                <br />
-	        	<input type="text" name="search_skill" style="width:200px"><br />
-		    	<br />
-			    金額
-                <br />
-	    		<input type="text" name="search_price" style="width:200px"><br />
-		    	<br />
-			    フリーワード
-                <br />
-	    		<input type="text" name="search_free_word" style="width:200px"><br />
-		    	<br />
-			    <input type="submit" value="検索">
-    			<br/>
-                <br/>
-            </form>
-    	</div>
-        <!-- 検索END　-->
-
         <br />
 
         <!-- コピーライト　-->

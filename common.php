@@ -30,12 +30,17 @@ $dbh = null;
 			break;
 		}
 
+		$phaseData = get_phaseimage_path($rec['t_project_phase_id']);
+
 		$arrayData[] = array(
 					'project_id' => $rec['t_project_id']
 					,'project_subject' => $rec['t_project_subject']
 					,'project_skill' => $rec['t_project_skill']
 					,'project_price' => $rec['t_project_price']
-					,'project_location' => $rec['t_project_location']);
+					,'project_location' => $rec['t_project_location']
+					,'mst_name' => $phaseData['mst_name']
+					,'mst_img_path' => $phaseData['mst_img_path']
+				);
 	}
 
 	//全データ件数
@@ -85,12 +90,17 @@ $dbh = null;
 			break;
 		}
 
+		$phaseData = get_phaseimage_path($rec['t_project_phase_id']);
+		
 		$arrayData[] = array(
 					'project_id' => $rec['t_project_id']
 					,'project_subject' => $rec['t_project_subject']
 					,'project_skill' => $rec['t_project_skill']
 					,'project_price' => $rec['t_project_price']
-					,'project_location' => $rec['t_project_location']);
+					,'project_location' => $rec['t_project_location']
+					,'mst_name' => $phaseData['mst_name']
+					,'mst_img_path' => $phaseData['mst_img_path']
+				);
 	}
 
 	//全データ件数
@@ -538,4 +548,44 @@ function print_menu() {
 	print '</div>';
    }//END-FUNCTION
 
+// 業務画像パス取得処理
+function get_phaseimage_path($mst_id) {
+	try
+	{
+		$dsn = 'mysql:dbname=employment;host=localhost';
+		$user = 'root';
+		$password = '';
+		$dbh = new PDO($dsn,$user,$password);
+		$dbh->query('SET NAMES utf8');
+		$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+		$sql = 'SELECT * FROM mst_project_phase WHERE mst_id = ?';
+
+		$stmt = $dbh->prepare($sql);
+		$data[] = $mst_id;
+		$stmt->execute($data);
+		$rec = $stmt->fetch(PDO::FETCH_ASSOC);
+		$dbh = null;
+
+		$arrayData = null;
+
+		if($rec==false)
+		{
+			$arrayData = array('mst_name' => "",
+							'mst_img_path' => "img/category/no_image.png");
+			return($arrayData);
+		}
+
+		$arrayData = array('mst_name' => $rec['mst_name'],
+					'mst_img_path' => $rec['mst_img_path']);
+
+		return($arrayData);
+	}catch (Exception $e){
+		print 'エラー（get_mstProjectPhaseDetails）</br></br>';
+		print $sql;
+		print '</br></br>';
+
+		return(false);
+	}
+}
 ?>
