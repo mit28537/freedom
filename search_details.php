@@ -1,4 +1,5 @@
 <?php
+    require_once('config.php');
     require_once('common.php');
 
     //前画面から案件番号を取得
@@ -18,7 +19,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1.0">
-        <title>ふりーえんじにゃー</title>
+        <title><?php print $config['app']['app_title']; ?></title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -77,7 +78,7 @@
                 print'<br />';
             ?>
         </form>
-        <div class="footer"></div>
+		</div>
         <!-- コピーライト　-->
 	    <div class="box_copyright">
             <p> Copyright(C) MIT.inc. Allrights reserved </p>

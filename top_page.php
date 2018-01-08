@@ -1,5 +1,5 @@
 <?php
-
+    require_once('config.php');
     require_once('common.php');
 
     const DISPLAY_COUNT =6;		//一覧表示件数
@@ -24,7 +24,7 @@
     <head>
 		<meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
-		<title>フリーえんじにゃ～</title>
+		<title><?php print $config['app']['app_title']; ?></title>
     </head>
     <body>
 
